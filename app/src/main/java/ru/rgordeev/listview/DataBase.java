@@ -6,7 +6,7 @@ import java.util.List;
 public class DataBase {
     public static final List<Person> db = new ArrayList<>();
 
-    static {
-        db.add(new Person("Ivan", "+79100000000"));
-    }
+//    static {
+//        db.add(new Person("Ivan", "+79100000000"));
+//    }
 }

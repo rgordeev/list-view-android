@@ -11,12 +11,16 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.List;
+
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
     private final Context context;
+    private final List<Person> persons;
 
-    public MyAdapter(Context context) {
+    public MyAdapter(Context context, List<Person> persons) {
         this.context = context;
+        this.persons = persons;
     }
 
     @NonNull
@@ -30,13 +34,13 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         Log.i("BIND DATA", "bind date" + position);
-        Person person = DataBase.db.get(position);
+        Person person = persons.get(position);
         holder.setData(person);
     }
 
     @Override
     public int getItemCount() {
-        return DataBase.db.size();
+        return persons.size();
     }
 
     class MyViewHolder extends RecyclerView.ViewHolder {
