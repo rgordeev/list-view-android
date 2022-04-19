@@ -16,10 +16,13 @@ import java.util.List;
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
     private final Context context;
-    private final List<Person> persons;
+    private List<Person> persons;
 
-    public MyAdapter(Context context, List<Person> persons) {
+    public MyAdapter(Context context) {
         this.context = context;
+    }
+
+    public void setPersons(List<Person> persons) {
         this.persons = persons;
     }
 

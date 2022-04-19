@@ -9,7 +9,7 @@ import androidx.annotation.Nullable;
 public class DataBaseHelper extends SQLiteOpenHelper {
 
     public DataBaseHelper(@Nullable Context context) {
-        super(context, "persons.db", null, 1);
+        super(context, "persons.db", null, 4);
     }
 
     @Override
@@ -19,6 +19,9 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-
+        db.execSQL("delete from persons");
+        db.execSQL("insert into persons(name, phone) values('Ivane','+79000000000')");
+        db.execSQL("insert into persons(name, phone) values('Ivane','+79000000000')");
+        db.execSQL("insert into persons(name, phone) values('Ivane','+79000000000')");
     }
 }
