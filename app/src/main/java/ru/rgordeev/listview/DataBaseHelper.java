@@ -9,7 +9,7 @@ import androidx.annotation.Nullable;
 public class DataBaseHelper extends SQLiteOpenHelper {
 
     public DataBaseHelper(@Nullable Context context) {
-        super(context, "persons.db", null, 4);
+        super(context, "persons.db", null, 1);
     }
 
     @Override

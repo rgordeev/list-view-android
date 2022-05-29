@@ -51,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode == Activity.RESULT_OK) {
             adapter.setPersons(DataManager.fetchAllPersons(dataBaseHelper));
+            adapter.notifyDataSetChanged();
         }
     }
 
